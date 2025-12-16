@@ -1,0 +1,32 @@
+html(lang='en')
+    head 
+        title Popular
+        meta(charset="UTF-8")
+    body 
+        script(src="/client.js")
+        include ../partials/header 
+        div#main(style="font-size: 150%;")
+            br 
+            img(src="/resources/super-mario.gif", alt="Super Mario")
+            h4 Wahoo!
+            label(for="searchBox") Search Query: 
+            input(id="searchBox", type="textbox")
+            br
+            label(for="limit") Results Limit: 
+            input(id="limit", type="textbox",value="10")
+            br
+            label Page Rank Boost: 
+            label(for="boostTrue") True
+            input(id="boostTrue", type="radio", name="boost", value="true")
+            label(for="boostTrue")  False
+            input(id="boostFalse", type="radio", name="boost", value="false",checked="checked")
+            br
+            label Fruits or Personal: 
+            label(for="fruits") Fruits
+            input(id="fruits", type="radio", name="fruitsOrPersonal", value="fruits",checked="checked")
+            label(for="personal")  Personal
+            input(id="personal", type="radio", name="fruitsOrPersonal", value="personal")
+            br
+            br
+            button(type="button" onclick='search()') Submit
+        

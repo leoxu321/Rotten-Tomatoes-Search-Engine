@@ -1,0 +1,11 @@
+html(lang='en')
+    head 
+        title Page Ranking
+        meta(charset="UTF-8")
+    body 
+        include ../partials/header 
+        div#main(style="font-size: 200%;") 
+            h4 Page Rank 
+            each rank, index in pageRanks
+                a #{index + 1}. #{rank.rank} #{rank.queuedLink}
+                br

@@ -1,0 +1,26 @@
+html(lang='en')
+    head 
+        title Page
+        meta(charset="UTF-8")
+    body 
+        include ../partials/header 
+        div#main(style="font-size: 150%;") 
+            //- title
+            h4 #{pageContent.title}
+            //- URL
+            label(for="pageLink") Original URL: 
+            a#pageLink(href= pageContent.queuedLink) #{pageContent.queuedLink}
+            //- incoming links
+            p Incoming Links:
+            each link in pageContent.incomingLinks
+                a(href= link) #{link}
+                br
+            //- outgoing links
+            p Outgoing Links:
+            each link in pageContent.outgoingLinks
+                a(href= link) #{link}
+                br
+            //- word frequency
+            p All Unique Words on this Page:
+            each word in pageContent.wordFrequency
+                p #{word.word} : #{word.count}
